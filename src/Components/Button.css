@@ -1,0 +1,28 @@
+.btn {
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.submit-btn {
+    border: none;
+    border-radius: 10px;
+    padding: 7px 10px;
+    margin-left: 10px;
+}
+
+.btn-purple {
+    background-color: #7c5cfc;
+    color: white;
+}
+
+.btn-white {
+    background-color: white;
+    color: black;
+    border: 2px solid #7c5cfc;
+}
