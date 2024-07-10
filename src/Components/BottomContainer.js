@@ -3,9 +3,11 @@
 import TransBox from "./TransBox";
 import TotalsBox from "./TotalsBox"
 
-
 function BottomContainer()
 {
+
+
+    
     return(
     <div class="bottom-container">
     <div class="bottom-container__left">
