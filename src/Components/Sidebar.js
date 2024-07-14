@@ -2,17 +2,24 @@
 import SidebarEntry from "./SidebarEntry";
 import Card from "./Card";
 
+
+
 function Sidebar(props) {
     return (
-        <nav class="sidebar">
-            <div class="sidebar__logo">
-                <h2 class="sidebar__logo-header">The Ma'aser App</h2>
+        <nav className="sidebar">
+
+            <div className="sidebar__logo">
+                <h2 className="sidebar__logo-header">The Ma'aser App</h2>
             </div>
-            <ul class="side-nav">
+            <ul className="side-nav">
                 {props.sideBarArray.map(function (entry) {
-                    return (<SidebarEntry index={entry.index} text={entry.text} activePage={props.activePage}></SidebarEntry>);
+                    return (<SidebarEntry index={entry.index} text={entry.text} activePage={props.activePage} updateActivePage={props.updateActivePage} icon={entry.icon}></SidebarEntry>);
                 })}
-                {console.log(props.activePage)}
+            </ul>
+            <ul className="side-nav">
+                <li className="side-nav__item last-item">
+                    <span>Log Out</span>
+                </li>
             </ul>
         </nav>
     );

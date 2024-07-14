@@ -11,15 +11,14 @@ import { useState } from 'react';
 
 function App() {
 
-  const [activePage, updateActivePage] = useState(5);  // default to dashboard
+  const [activePage, updateActivePage] = useState(0);  // default to dashboard
 
   const sideBar = [
-    { "index": 0, "text": "Dashboard" },
-    { "index": 1, "text": "Income" },
-    { "index": 2, "text": "Donations" },
-    { "index": 3, "text": "Inbox" },
-    { "index": 4, "text": "Settings" },
-    { "index": 5, "text": "Logout" }
+    { "index": 0, "text": "Dashboard", "icon": "faHouse" },
+    { "index": 1, "text": "Income", "icon": "faWallet" },
+    { "index": 2, "text": "Donations", "icon": "faNoteSticky" },
+    { "index": 3, "text": "Inbox", "icon": "faCommentDots" },
+    { "index": 4, "text": "Settings", "icon": "faGear" }
   ]
 
   return (
@@ -32,7 +31,6 @@ function App() {
         {activePage == 2 && <Donations></Donations>}
         {activePage == 3 && <Inbox></Inbox>}
         {activePage == 4 && <Settings></Settings>}
-        {activePage == 5 && <p> You have logged out </p>}
       </main>
     </div>
   );

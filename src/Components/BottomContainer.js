@@ -1,7 +1,18 @@
 
-
 import TransBox from "./TransBox";
 import TotalsBox from "./TotalsBox"
+
+
+const transDon = [["Yad Eliezer", "01/01/24", 2000, "Helping the poor"],
+["Kollel Kever Rochel", "04/01/24", 2000, "Torah Institutes"],
+["Likrat Kallah", "06/01/24", 2000, "Hachnasas Kallah"]];
+
+const transInc = [["Compuskills", "01/01/24", 2000, "Yes"],
+["4Ugifts", "01/01/24", 2000, "No"],
+["Ner Tzaddik", "01/01/24", 2000, "Yes"]];
+
+const arrayDonHeadings = ["Donations", "Date", "Amount", "Category"];
+const arrayIncHeadings = ["Company", "Date", "Amount", "Exempt from Maaser"];
 
 function BottomContainer() {
   return (
@@ -16,8 +27,8 @@ function BottomContainer() {
           </TotalsBox>
         </div>
       </div>
-      <TransBox headerText="Donations History"></TransBox>
-      <TransBox headerText="Income History"></TransBox>
+      <TransBox headerText="Donations History" transHeadingsArray={arrayDonHeadings} transArray={transDon}></TransBox>
+      <TransBox headerText="Income History" transHeadingsArray={arrayIncHeadings} transArray={transInc}></TransBox>
     </div>
   );
 }
