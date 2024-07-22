@@ -1,8 +1,11 @@
 
 
 function DateInput(props) {
+    function updateHandler(e) {
+        props.updateDate(e.target.value);
+    }
     return (
-        <input name={props.name} type="date" value={props.value} required="required"></input>
+        <input onChange={updateHandler} name={props.name} type="date" value={props.value} required="required"></input>
     );
 }
 

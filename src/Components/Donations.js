@@ -1,8 +1,7 @@
-
+import DonationsInput from "./DonationsInput";
 function Donations() {
-
     return (
-        <p>  In the donations page</p>
+        <DonationsInput></DonationsInput>
     );
 }
 

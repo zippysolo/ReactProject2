@@ -1,0 +1,8 @@
+.label_input,
+.label {
+    padding: 10px;
+    height: 2.5rem;
+    margin: 15px;
+    width: 80%;
+    border-radius: 10px;
+}
