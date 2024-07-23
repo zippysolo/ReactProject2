@@ -15,6 +15,24 @@ import { faHouse, faNoteSticky, faCommentDots, faGear, faWallet, faArrowRightFro
 
 function App() {
 
+  const [transDon, updateTransDon] = useState([["Yad Eliezer", "01/01/24", 2000, "Helping the poor"]]);
+
+
+  console.log(transDon);
+
+
+  // const transDon = [["Yad Eliezer", "01/01/24", 2000, "Helping the poor"],
+  //["Kollel Kever Rochel", "04/01/24", 2000, "Torah Institutes"],
+  //["Likrat Kallah", "06/01/24", 2000, "Hachnasas Kallah"]];
+
+  const transInc = [["Compuskills", "01/01/24", 2000, "Yes"],
+  ["4Ugifts", "01/01/24", 2000, "No"],
+  ["Ner Tzaddik", "01/01/24", 2000, "Yes"]];
+
+  const arrayDonHeadings = ["Donations", "Date", "Amount", "Category"];
+  const arrayIncHeadings = ["Company", "Date", "Amount", "Exempt from Maaser"];
+
+
   const [activePage, updateActivePage] = useState(0);  // default to dashboard
 
 
@@ -27,21 +45,16 @@ function App() {
     { "index": 5, "text": "Logout", "icon": faArrowRightFromBracket }
   ]
 
-  const categories = [
-    { "index": 0, "text": "Helping the Poor", "class": "first" },
-    { "index": 1, "text": "Hachnasas Kallah", "class": "second" },
-    { "index": 2, "text": "Medical Institutions", "class": "third" },
-    { "index": 3, "text": "Torah Institutions", "class": "fourth" }
-  ]
 
   return (
     <div className="container">
       <Sidebar sideBarArray={sideBar} updateActivePage={updateActivePage} activePage={activePage}></Sidebar>
       <main className="main-content">
+        <div class="date"></div>
         <Topbar></Topbar>
-        {activePage == 0 && <BottomContainer categories={categories}></BottomContainer>}
-        {activePage == 1 && <Income></Income>}
-        {activePage == 2 && <Donations></Donations>}
+        {activePage == 0 && <BottomContainer transDon={transDon} transInc={transInc} arrayDonHeadings={arrayDonHeadings} arrayIncHeadings={arrayIncHeadings}></BottomContainer>}
+        {activePage == 1 && <Income transInc={transInc} arrayIncHeadings={arrayIncHeadings}></Income>}
+        {activePage == 2 && <Donations transArray={transDon} transHeadingsArray={arrayDonHeadings} updateTransDon={updateTransDon}></Donations>}
         {activePage == 3 && <Inbox></Inbox>}
         {activePage == 4 && <Settings></Settings>}
         {activePage == 5 && <p>You are logged out </p>}

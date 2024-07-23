@@ -4,19 +4,11 @@ import TotalsBox from "./TotalsBox"
 import Card from "./Card";
 import Balance from "./Balance";
 import Spending from "./Spending";
+import Categories from "../Categories";
+
 
 function BottomContainer(props) {
 
-  const transDon = [["Yad Eliezer", "01/01/24", 2000, "Helping the poor"],
-  ["Kollel Kever Rochel", "04/01/24", 2000, "Torah Institutes"],
-  ["Likrat Kallah", "06/01/24", 2000, "Hachnasas Kallah"]];
-
-  const transInc = [["Compuskills", "01/01/24", 2000, "Yes"],
-  ["4Ugifts", "01/01/24", 2000, "No"],
-  ["Ner Tzaddik", "01/01/24", 2000, "Yes"]];
-
-  const arrayDonHeadings = ["Donations", "Date", "Amount", "Category"];
-  const arrayIncHeadings = ["Company", "Date", "Amount", "Exempt from Maaser"];
 
   return (
     <div class="bottom-container">
@@ -29,15 +21,15 @@ function BottomContainer(props) {
             to last year">
           </TotalsBox>
         </div>
-        <TransBox headerText="Donations History" transHeadingsArray={arrayDonHeadings} transArray={transDon}></TransBox>
-        <TransBox headerText="Income History" transHeadingsArray={arrayIncHeadings} transArray={transInc}></TransBox>
+        <TransBox headerText="Donations History" transHeadingsArray={props.arrayDonHeadings} transArray={props.transDon}></TransBox>
+        <TransBox headerText="Income History" transHeadingsArray={props.arrayIncHeadings} transArray={props.transInc}></TransBox>
       </div>
       <div class="bottom-container__right">
         <Card>
           <Balance totBalance="$7823" subText="From Jan 01, 2023 to May 24, 2023"></Balance>
         </Card>
         <Card>
-          <Spending categories={props.categories}></Spending>
+          <Spending categories={Categories}></Spending>
         </Card>
       </div>
 
