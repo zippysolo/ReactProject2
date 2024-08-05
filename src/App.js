@@ -12,15 +12,16 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse, faNoteSticky, faCommentDots, faGear, faWallet, faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 
+import { put, get, post, remove } from './ajax.js';
 
 function App() {
 
   const [transDon, updateTransDon] = useState([["Yad Eliezer", "01/01/24", 2000, "Helping the poor"]]);
-
-
-  console.log(transDon);
-
-
+  const data = get("http://localhost/Users.php?User_ID=4");
+  console.log(data);
+  const data1 = "";
+  //console.log(post("http://localhost/Users.php", data1));
+  //console.log(data);
   // const transDon = [["Yad Eliezer", "01/01/24", 2000, "Helping the poor"],
   //["Kollel Kever Rochel", "04/01/24", 2000, "Torah Institutes"],
   //["Likrat Kallah", "06/01/24", 2000, "Hachnasas Kallah"]];

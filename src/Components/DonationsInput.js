@@ -31,7 +31,6 @@ function DonationsInput(props) {
         updateCategory("");
     }
 
-
     return (
         <form class="parent">
             <div>
