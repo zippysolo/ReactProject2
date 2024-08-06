@@ -2,13 +2,15 @@ import './DonationsInput.css';
 import Categories from '../Categories.js';
 import Button from './Button.js';
 import { useState } from 'react';
+import { put, get, post, remove } from '../ajax.js';
+
 
 import Card from "./Card";
 function DonationsInput(props) {
 
     const [company, updateCompany] = useState();
     const [date, updateDate] = useState();
-    const [amount, updateAmount] = useState(0);
+    const [amount, updateAmount] = useState();
     const [category, updateCategory] = useState();
 
     function clickHandler(e) {
@@ -18,7 +20,10 @@ function DonationsInput(props) {
             const newArr = [...prev];
             console.log(newArr);
             newArr.push([company, date, amount, category]);
+            const tempArr = { "User_ID": 4, "Amount": 23, "Date": "06/04/22", "Company": "R Shammai", "Category": 1 };
+            post("http://localhost/Donations.php", tempArr);
             return newArr;
+
         }
         );
         clearVals();

@@ -8,8 +8,6 @@ import Categories from "../Categories";
 
 
 function BottomContainer(props) {
-
-
   return (
     <div class="bottom-container">
       <div class="bottom-container__left">

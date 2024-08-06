@@ -1,4 +1,5 @@
 
+
 function manageErrors(response) {
     if (!response.ok) {
         console.log(response);
@@ -38,7 +39,7 @@ async function put(url, data) {
 }
 
 async function get(url) {
-    const response = await fetch(url, { credentials: "include" });
+    const response = await fetch(url);
     console.log(response);
     manageErrors(response);
     const data = await response.json();
